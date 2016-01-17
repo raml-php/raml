@@ -8,7 +8,7 @@ RAML 1.0 parser for PHP 7 based on YAML extension (version 2).
 ### Install:
 
 ```bash
-composer require brzuchal/raml-parser
+composer require raml-php/parser
 ```
 
 ### Requires:

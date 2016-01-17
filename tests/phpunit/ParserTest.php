@@ -29,5 +29,6 @@ class ParserTest extends PHPUnit_Framework_TestCase
         $definition = $parser->parse(__DIR__ . '/../raml/security-schemes.raml');
         $this->assertInstanceOf(Definition::class, $definition);
         $this->assertInstanceOf(SecuritySchemesCollection::class, $definition->securitySchemes());
+        print_r($definition);
     }
 }

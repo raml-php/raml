@@ -41,7 +41,7 @@ class SecuritySchemesHydratorStrategy implements StrategyInterface
         $securitySchemesCollection = new SecuritySchemesCollection();
         foreach ($values as $value) {
             $securityScheme = new SecurityScheme();
-            $securitySchemesCollection->attach($this->securitySchemeHydrator->hydrate($value, $securityScheme));
+            $securitySchemesCollection->attach($this->securitySchemeHydrator->hydrate(reset($value), $securityScheme), key($value));
         }
 
         return $securitySchemesCollection;

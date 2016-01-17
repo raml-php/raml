@@ -1,6 +1,6 @@
 <?php
-use Raml\ApiDefinition\Collection\SecuritySchemesCollection;
-use Raml\ApiDefinition\Definition;
+use Raml\SecuritySchemes;
+use Raml\Definition;
 use Raml\Parser;
 
 /**
@@ -20,7 +20,7 @@ class ParserTest extends PHPUnit_Framework_TestCase
         $this->assertInternalType('string', $definition->version());
         $this->assertInternalType('string', $definition->baseUri());
         $this->assertInternalType('string', $definition->mediaType());
-        $this->assertInstanceOf(SecuritySchemesCollection::class, $definition->securitySchemes());
+        $this->assertInstanceOf(SecuritySchemes::class, $definition->securitySchemes());
     }
 
     public function testSecuritySchemesParse()
@@ -28,7 +28,6 @@ class ParserTest extends PHPUnit_Framework_TestCase
         $parser = new Parser();
         $definition = $parser->parse(__DIR__ . '/../raml/security-schemes.raml');
         $this->assertInstanceOf(Definition::class, $definition);
-        $this->assertInstanceOf(SecuritySchemesCollection::class, $definition->securitySchemes());
-        print_r($definition);
+        $this->assertInstanceOf(SecuritySchemes::class, $definition->securitySchemes());
     }
 }

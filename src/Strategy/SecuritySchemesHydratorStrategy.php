@@ -7,7 +7,7 @@
  */
 namespace Raml\Strategy;
 
-use Raml\Collection\SecuritySchemesCollection;
+use Raml\SecuritySchemes;
 use Raml\SecurityScheme;
 use Zend\Hydrator\Reflection;
 use Zend\Hydrator\Strategy\StrategyInterface;
@@ -26,12 +26,12 @@ class SecuritySchemesHydratorStrategy implements StrategyInterface
         $this->securitySchemeHydrator = $hydrator;
     }
 
-    public function extract($securitySchemes)
+    public function extract($resources)
     {
-        if (!($securitySchemes instanceof SecuritySchemesCollection)) {
+        if (!($resources instanceof SecuritySchemes)) {
             throw new \UnexpectedValueException("Unexpected value, expecting SecuritySchemesCollection");
         }
-        foreach ($securitySchemes as $securityScheme => $info) {
+        foreach ($resources as $securityScheme => $info) {
             $data[] = array($info => $this->securitySchemeHydrator->extract($securityScheme));
         }
 
@@ -40,7 +40,7 @@ class SecuritySchemesHydratorStrategy implements StrategyInterface
 
     public function hydrate($values)
     {
-        $securitySchemesCollection = new SecuritySchemesCollection();
+        $securitySchemesCollection = new SecuritySchemes();
         foreach ($values as $value) {
             $securityScheme = new SecurityScheme();
             $securitySchemesCollection->attach($this->securitySchemeHydrator->hydrate(reset($value), $securityScheme), key($value));

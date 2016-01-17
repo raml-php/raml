@@ -36,3 +36,9 @@ securitySchemes:
           authorizationUri: https://www.dropbox.com/1/oauth2/authorize
           accessTokenUri: https://api.dropbox.com/1/oauth2/token
           authorizationGrants: [ authorization_code, refresh_token ]
+
+/users/{userid}/gists:
+    get:
+        securedBy: [null, oauth_2_0: { scopes: [ ADMINISTRATOR ] } ]
+        description: |
+            List the authenticated user's gists or if called anonymously, this will return all public gists.

@@ -7,8 +7,6 @@
  */
 namespace Raml;
 
-use Raml\Collection\SecuritySchemesCollection;
-
 /**
  * Class Definition
  * @package Raml
@@ -33,29 +31,34 @@ class Definition
      */
     private $mediaType = '';
     /**
-     * @var SecuritySchemesCollection
+     * @var SecuritySchemes
      */
     private $securitySchemes;
+    /**
+     * @var Resources
+     */
+    private $resources;
 
     public function __construct(
         string $title = '',
         string $version = '',
         string $baseUri = '',
         string $mediaType = '',
-        SecuritySchemesCollection $securitySchemes = null
+        SecuritySchemes $securitySchemes = null,
+        Resources $resources = null
     ) {
-
         $this->title = $title;
         $this->version = $version;
         $this->baseUri = $baseUri;
         $this->mediaType = $mediaType;
-        $this->securitySchemes = $securitySchemes ?? new SecuritySchemesCollection();
+        $this->securitySchemes = $securitySchemes ?? new SecuritySchemes();
+        $this->resources = $resources ?? new Resources();
     }
 
     /**
      * @return string
      */
-    public function title()
+    public function title() : string
     {
         return $this->title;
     }
@@ -63,7 +66,7 @@ class Definition
     /**
      * @return string
      */
-    public function version()
+    public function version() : string
     {
         return $this->version;
     }
@@ -71,7 +74,7 @@ class Definition
     /**
      * @return string
      */
-    public function baseUri()
+    public function baseUri() : string
     {
         return $this->baseUri;
     }
@@ -79,16 +82,24 @@ class Definition
     /**
      * @return string
      */
-    public function mediaType()
+    public function mediaType() : string
     {
         return $this->mediaType;
     }
 
     /**
-     * @return SecuritySchemesCollection
+     * @return SecuritySchemes
      */
-    public function securitySchemes()
+    public function securitySchemes() : SecuritySchemes
     {
         return $this->securitySchemes;
+    }
+
+    /**
+     * @return Resources
+     */
+    public function resources() : Resources
+    {
+        return $this->resources;
     }
 }

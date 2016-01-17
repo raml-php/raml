@@ -25,11 +25,13 @@ class Parser
     public function parse(string $filepath) : Definition
     {
         $file = new SplFileInfo($filepath);
+        $rootPath = $file->getPath();
+
         if (!$file->isFile() || !$file->isReadable()) {
             throw new RuntimeException("Given file {$filepath} isn't file or is unreadable");
         }
+
         $ndocs = 0;
-        $rootPath = $file->getPath();
         $data = yaml_parse_file($file->getPathname(), 0, $ndocs, [
             '!include' => function (string $filepath) use ($rootPath) {
                 $file = new SplFileInfo($rootPath . DIRECTORY_SEPARATOR . $filepath);
@@ -40,6 +42,7 @@ class Parser
                 return file_get_contents($file->getPathname());
             }
         ]);
+
         $definitionHydrator = new DefinitionHydrator();
         $definition = new Definition();
         $definitionHydrator->hydrate($data, $definition);

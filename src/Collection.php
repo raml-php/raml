@@ -5,7 +5,7 @@
  * Date: 17.01.16
  * Time: 10:15
  */
-namespace Raml\Collection;
+namespace Raml;
 
 use Countable;
 use Iterator;
@@ -16,7 +16,7 @@ use SplObjectStorage;
  * @package Raml\Collection
  * @author Michał Brzuchalski <michal.brzuchalski@gmail.com>
  */
-abstract class AbstractCollection implements Iterator, Countable
+abstract class Collection implements Iterator, Countable
 {
     /**
      * @var SplObjectStorage

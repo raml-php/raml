@@ -5,7 +5,8 @@
   "require": {
     "php": "~7",
     "ext-yaml": ">=2.0.0",
-    "zendframework/zend-hydrator": "^2.0"
+    "zendframework/zend-hydrator": "^2.0",
+    "zendframework/zend-filter": "^2.5"
   },
   "require-dev": {
     "knplabs/phpspec-welldone-extension": "dev-master",

@@ -1,0 +1,19 @@
+extensions:
+    - PhpSpec\Extension\CodeCoverageExtension
+    - Knp\PhpSpec\WellDone\Extension
+
+suites:
+  types:
+    namespace: Madkom\RamlClientGenerator
+    psr4_prefix: Madkom\RamlClientGenerator
+    spec_path: %paths.config%/tests
+
+knp.welldone.exclusion:
+    - "*Controller"
+    - "*Test"
+
+code_coverage:
+    output: tests/coverage/phpspec.cov
+    format: php
+
+formatter.name: pretty

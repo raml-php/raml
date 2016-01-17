@@ -1,0 +1,48 @@
+{
+  "name": "raml-php/parser",
+  "description": "RAML 1.0 parser for PHP 7 based on YAML extension (version 2).",
+  "type": "library",
+  "require": {
+    "php": "~7",
+    "ext-yaml": ">=2.0.0",
+    "raml-php/api-definition": "dev-master",
+    "zendframework/zend-hydrator": "^2.0"
+  },
+  "require-dev": {
+    "knplabs/phpspec-welldone-extension": "dev-master",
+    "henrikbjorn/phpspec-code-coverage": "1.*",
+    "phpunit/phpcov": "*",
+    "jakub-onderka/php-parallel-lint": "0.*",
+    "jakub-onderka/php-console-highlighter": "0.*",
+    "satooshi/php-coveralls": "dev-master",
+    "clover/dump": "dev-master",
+    "squizlabs/php_codesniffer": "^2.3",
+    "instaclick/object-calisthenics-sniffs": "@dev",
+    "phpspec/phpspec": "^2.3",
+    "phpunit/phpunit": "4.*"
+  },
+  "repositories": [
+    {
+      "type": "vcs",
+      "url": "git@github.com:raml-php/api-definition"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Brzuchal\\RamlParser\\": "src/"
+    }
+  },
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Michał Brzuchalski",
+      "email": "michal.brzuchalski@gmail.com"
+    }, {
+      "name": "Dariusz Gafka",
+      "email": "dgafka.mail@gmail.com"
+    }
+  ],
+  "config": {
+    "bin-dir": "bin/"
+  }
+}

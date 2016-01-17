@@ -5,16 +5,15 @@
  * Date: 17.01.16
  * Time: 06:46
  */
-namespace Raml\Parser;
+namespace Raml;
 
-use Raml\ApiDefinition\Definition;
-use Raml\Parser\Hydrator\DefinitionHydrator;
+use Raml\Hydrator\DefinitionHydrator;
 use RuntimeException;
 use SplFileInfo;
 
 /**
  * Class Parser
- * @package Raml\Parser
+ * @package Raml
  * @author Michał Brzuchalski <michal.brzuchalski@gmail.com>
  */
 class Parser

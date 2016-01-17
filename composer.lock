@@ -4,57 +4,9 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "c0dd66898b2c5e12bdc757f07eebd25f",
-    "content-hash": "eb19f42042a53ae4de760d03257e97fc",
+    "hash": "77d16a86615d7d67f715f5b299bc2517",
+    "content-hash": "934f90d0c8a47b7b5ca832a46469d1fe",
     "packages": [
-        {
-            "name": "raml-php/api-definition",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/raml-php/api-definition.git",
-                "reference": "9c478e65e432104d344e2f888d534206301af346"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/raml-php/api-definition/zipball/9c478e65e432104d344e2f888d534206301af346",
-                "reference": "9c478e65e432104d344e2f888d534206301af346",
-                "shasum": ""
-            },
-            "require": {
-                "php": "~7"
-            },
-            "require-dev": {
-                "jakub-onderka/php-console-highlighter": "0.*",
-                "jakub-onderka/php-parallel-lint": "0.*",
-                "squizlabs/php_codesniffer": "^2.3"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Raml\\ApiDefinition\\": "src/"
-                }
-            },
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Michał Brzuchalski",
-                    "email": "michal.brzuchalski@gmail.com"
-                },
-                {
-                    "name": "Dariusz Gafka",
-                    "email": "dgafka.mail@gmail.com"
-                }
-            ],
-            "description": "RAML ApiDefinition for RAML 1.0 Parser",
-            "support": {
-                "source": "https://github.com/raml-php/api-definition/tree/master",
-                "issues": "https://github.com/raml-php/api-definition/issues"
-            },
-            "time": "2016-01-17 11:17:49"
-        },
         {
             "name": "zendframework/zend-hydrator",
             "version": "2.0.0",
@@ -2520,7 +2472,6 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
-        "raml-php/api-definition": 20,
         "knplabs/phpspec-welldone-extension": 20,
         "satooshi/php-coveralls": 20,
         "clover/dump": 20,

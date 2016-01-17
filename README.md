@@ -21,7 +21,7 @@ composer install --dev
 ```
 
 ```php
-$parser = new \Raml\Parser\Parser();
+$parser = new \Raml\Parser();
 $apiDefinition = $parser->parse($filename, true);
 
 $title = $apiDefinition->getTitle();

@@ -1,7 +1,7 @@
 <?php
 use Raml\ApiDefinition\Collection\SecuritySchemesCollection;
 use Raml\ApiDefinition\Definition;
-use Raml\Parser\Parser;
+use Raml\Parser;
 
 /**
  * Created by PhpStorm.

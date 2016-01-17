@@ -5,16 +5,16 @@
  * Date: 17.01.16
  * Time: 08:23
  */
-namespace Raml\Parser\Strategy;
+namespace Raml\Strategy;
 
-use Raml\ApiDefinition\Collection\SecuritySchemesCollection;
-use Raml\ApiDefinition\SecurityScheme;
+use Raml\Collection\SecuritySchemesCollection;
+use Raml\SecurityScheme;
 use Zend\Hydrator\Reflection;
 use Zend\Hydrator\Strategy\StrategyInterface;
 
 /**
  * Class SecuritySchemesStrategy
- * @package Raml\Parser\Strategy
+ * @package Raml\Strategy
  * @author Michał Brzuchalski <michal.brzuchalski@gmail.com>
  */
 class SecuritySchemesHydratorStrategy implements StrategyInterface
@@ -27,10 +27,12 @@ class SecuritySchemesHydratorStrategy implements StrategyInterface
     }
 
     public function extract($securitySchemes)
-    {return null;
-        $data = [];
-        foreach ($securitySchemes as $securityScheme) {
-            $data[] = $this->securitySchemeHydrator->extract($securityScheme);
+    {
+        if (!($securitySchemes instanceof SecuritySchemesCollection)) {
+            throw new \UnexpectedValueException("Unexpected value, expecting SecuritySchemesCollection");
+        }
+        foreach ($securitySchemes as $securityScheme => $info) {
+            $data[] = array($info => $this->securitySchemeHydrator->extract($securityScheme));
         }
 
         return $data;

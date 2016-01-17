@@ -1,11 +1,10 @@
 {
-  "name": "raml-php/parser",
-  "description": "RAML 1.0 parser for PHP 7 based on YAML extension (version 2).",
+  "name": "raml-php/raml",
+  "description": "RAML 1.0 Parser and Dumper for PHP 7 based on YAML extension (version 2).",
   "type": "library",
   "require": {
     "php": "~7",
     "ext-yaml": ">=2.0.0",
-    "raml-php/api-definition": "dev-master",
     "zendframework/zend-hydrator": "^2.0"
   },
   "require-dev": {
@@ -21,15 +20,9 @@
     "phpspec/phpspec": "^2.3",
     "phpunit/phpunit": "4.*"
   },
-  "repositories": [
-    {
-      "type": "vcs",
-      "url": "git@github.com:raml-php/api-definition"
-    }
-  ],
   "autoload": {
     "psr-4": {
-      "Raml\\Parser\\": "src/"
+      "Raml\\": "src/"
     }
   },
   "license": "MIT",

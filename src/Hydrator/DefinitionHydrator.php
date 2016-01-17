@@ -5,14 +5,14 @@
  * Date: 17.01.16
  * Time: 08:18
  */
-namespace Raml\Parser\Hydrator;
+namespace Raml\Hydrator;
 
-use Raml\Parser\Strategy\SecuritySchemesHydratorStrategy;
+use Raml\Strategy\SecuritySchemesHydratorStrategy;
 use Zend\Hydrator\Reflection;
 
 /**
  * Class BasicSecurityScheme
- * @package Raml\Parser\Hydrator
+ * @package Raml\Hydrator
  * @author Michał Brzuchalski <michal.brzuchalski@gmail.com>
  */
 class DefinitionHydrator extends Reflection

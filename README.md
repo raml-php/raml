@@ -34,15 +34,15 @@ $version = $apiDefinition->getVersion();
 
 Implement various RAML elements:
 
-[ ] BasicSecurityScheme Information
-[ ] Data Types
-[ ] Resources
-[ ] Methods
-[ ] Responses
-[ ] Resource Types and Traits
-[ ] Security
-[ ] Annotations
-[ ] Includes, Libraries, Overlays, and Extensions
+- [ ] BasicSecurityScheme Information
+- [ ] Data Types
+- [ ] Resources
+- [ ] Methods
+- [ ] Responses
+- [ ] Resource Types and Traits
+- [ ] Security
+- [ ] Annotations
+- [ ] Includes, Libraries, Overlays, and Extensions
 
 ## Contributing
 

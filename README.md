@@ -1,14 +1,14 @@
-RAML 1.0 Parser
-===============
+RAML 1.0 for PHP
+================
 
-RAML 1.0 parser for PHP 7 based on YAML extension (version 2).
+RAML 1.0 Parser and Dumper for PHP 7 based on YAML extension (version 2).
 
 ## Get started
 
 ### Install:
 
 ```bash
-composer require raml-php/parser
+composer require raml-php/raml
 ```
 
 ### Requires:
@@ -22,12 +22,15 @@ composer install --dev
 
 ```php
 $parser = new \Raml\Parser();
-$apiDefinition = $parser->parse($filename, true);
+$definition = $parser->parse($filename, true);
 
-$title = $apiDefinition->getTitle();
-$baseUri = $apiDefinition->getBaseUri();
-$mediaType = $apiDefinition->getMediaType();
-$version = $apiDefinition->getVersion();
+$title = $definition->getTitle();
+$baseUri = $definition->getBaseUri();
+$mediaType = $definition->getMediaType();
+$version = $definition->getVersion();
+
+$dumper = new \Raml\Dumper();
+$dumper->dump($definition, $filename);
 ```
 
 ## TODO
